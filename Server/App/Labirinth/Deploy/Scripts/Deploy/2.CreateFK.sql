@@ -13,12 +13,19 @@ add constraint fk_person_user_id
 		on delete no action on update no action;
 
 ----fk_location_world
-alter table location 
+alter table "location"
 add constraint fk_location_world_id 
 	foreign key(world_id) 
 		references world(id) 
 		on delete no action on update no action;
 
+----fk_characteristic_person
+alter table characteristic 
+add constraint fk_characteristic_person_id 
+	foreign key(person_id) 
+		references _person(id) 
+		on delete no action on update no action;
+		
 
 ----release
 --alter table release 
