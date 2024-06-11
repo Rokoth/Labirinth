@@ -32,5 +32,12 @@ add constraint fk_point_point_type_id
 	foreign key(point_type_id) 
 		references point_type(id) 
 		on delete no action on update no action;
+
+----fk_point_location
+alter table point 
+add constraint fk_point_location_id 
+	foreign key(location_id) 
+		references "location"(id) 
+		on delete no action on update no action;
 		
 
