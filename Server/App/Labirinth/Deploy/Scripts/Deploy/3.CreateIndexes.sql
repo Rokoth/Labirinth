@@ -5,6 +5,13 @@ create unique index uidx_user_login
 create index idx_user_name
     on "user"("name");
 
+--world
+create unique index uidx_world_name 
+	on world("name") where not is_deleted;
+
+create index idx_world_name
+   on world("name");
+
 ----client
 --create unique index uidx_client_login 
 --	on client("login") where not is_deleted;
