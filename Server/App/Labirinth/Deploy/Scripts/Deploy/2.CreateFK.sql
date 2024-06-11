@@ -23,42 +23,14 @@ add constraint fk_location_world_id
 alter table characteristic 
 add constraint fk_characteristic_person_id 
 	foreign key(person_id) 
-		references _person(id) 
+		references person(id) 
 		on delete no action on update no action;
 		
-
-----release
---alter table release 
---add constraint fk_release_client_id 
---	foreign key(client_id) 
---		references client(id) 
---		on delete no action on update no action;
-
-----release_architect
---alter table release_architect 
---add constraint fk_release_architect_release_id 
---	foreign key(release_id) 
---		references release(id) 
---		on delete no action on update no action;
-
-----load_history
---alter table load_history 
---add constraint fk_load_history_client_id 
---	foreign key(client_id) 
---		references client(id) 
---		on delete no action on update no action;
-
---alter table load_history 
---add constraint fk_load_history_release_id 
---	foreign key(release_id) 
---		references release(id) 
---		on delete no action on update no action;
-
---alter table load_history 
---add constraint fk_load_history_release_architect_id 
---	foreign key(architect_id) 
---		references release_architect(id) 
---		on delete no action on update no action;
-
-
+----fk_point_point_type
+alter table point 
+add constraint fk_point_point_type_id 
+	foreign key(point_type_id) 
+		references point_type(id) 
+		on delete no action on update no action;
+		
 
